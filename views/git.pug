@@ -1,0 +1,23 @@
+extends layout.pug
+
+block content
+    .content 
+        .menu
+            include includes/menu.pug
+
+        .page
+            - const capitalize = s => s && s[0].toUpperCase() + s.slice(1)
+            h1= capitalize('les basiques avec Git et Github')
+                .block
+                    p Initier le dossier courant en dossier git
+                    code git init
+                    p Lier au répertoire sur Github
+                    code git remote add origin git@github.com...
+                    p Lier à la branche principale
+                    code git branch -M main
+                    p Ajouter les fichiers dans la file d'attente
+                    code git add .
+                    p Réaliser son premier commit
+                    code git commit -m "Initial commit"
+                    p Push le tout sur Github
+                    code git push -u origin main

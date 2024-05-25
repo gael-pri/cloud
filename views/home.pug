@@ -3,23 +3,7 @@ extends layout.pug
 block content
     .content 
         .menu
-            h3 Les languages
-            ul(class="navbar-nav ms-3")
-                li(class="nav-item") Html
-                li(class="nav-item") Css
-                li(class="nav-item") Javascript 
-                li(class="nav-item") Sql
-
-            h3 Les outils
-            ul(class="navbar-nav ms-3")
-                li(class="nav-item") Node
-                li(class="nav-item") React
-                li(class="nav-item") Git/Github 
-
-            h3 Les services
-            ul(class="navbar-nav ms-3")
-                li(class="nav-item") N8n
-                li(class="nav-item") Stripe
+            include includes/menu.pug
 
         .page
             - const capitalize = s => s && s[0].toUpperCase() + s.slice(1)
