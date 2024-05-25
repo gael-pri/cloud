@@ -1,0 +1,17 @@
+{
+  "name": "cloud",
+  "version": "1.0.0",
+  "description": "My art potentiel cloud",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gael Prigent",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "pug": "^3.0.3"
+  }
+}
