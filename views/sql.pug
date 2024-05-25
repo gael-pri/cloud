@@ -9,6 +9,23 @@ block content
             .block
                 h1= capitalize('les basiques du Sql')
             .block
+                h3 Installer MariaDB
+                p Sur linux ubuntu
+                code apt install 
+                h3 Le code de base
+                p Voir la version installée
+                code mysql -V
+                p Se connecter à MariaDB
+                code mysql -u utilisateur -p
+                p Lister les bases de données
+                code show databases;
+                p Créer une base de données
+                code CREATE DATABASE wild;
+                p Sélectionner la base de données sur laquelle travailler
+                code USE wild;
+                p Lister les tables
+                code SHOW TABLES;
+            .block
                 h3 Installer PostgreSQL
                 p Sur linux ubuntu
                 code apt install postgresql
