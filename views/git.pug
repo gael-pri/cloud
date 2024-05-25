@@ -7,17 +7,25 @@ block content
 
         .page
             - const capitalize = s => s && s[0].toUpperCase() + s.slice(1)
-            h1= capitalize('les basiques avec Git et Github')
-                .block
-                    p Initier le dossier courant en dossier git
-                    code git init
-                    p Lier au répertoire sur Github
-                    code git remote add origin git@github.com...
-                    p Lier à la branche principale
-                    code git branch -M main
-                    p Ajouter les fichiers dans la file d'attente
-                    code git add .
-                    p Réaliser son premier commit
-                    code git commit -m "Initial commit"
-                    p Push le tout sur Github
-                    code git push -u origin main
+            .block
+                h1= capitalize('les basiques avec Git et Github')
+            .block
+                h3 Nouveau projet Git
+                p Initier le dossier courant en dossier git
+                code git init
+                p Lier au répertoire sur Github
+                code git remote add origin git@github.com...
+                p Lier à la branche principale
+                code git branch -M main
+            .block
+                h3 Routine de mise à jour du travail local
+                p Ajouter les fichiers dans la file d'attente
+                code git add .
+                p Réaliser son premier commit
+                code git commit -m "Initial commit"
+                p Push le tout sur Github
+                code git push -u origin main
+            .block
+                h3 Quelques tips utiles
+                p Retirer les fichiers dans la file d'attente (annuler git add .)
+                code git reset

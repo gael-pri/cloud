@@ -38,24 +38,28 @@
 .page {
     display: flex;
     flex: 6 0 auto;
-    flex-direction: row;
+    flex-direction: column;
     padding: 48px;
 }
-.page .block {
-    padding: 24px;
+.block {
+    padding: 8px;
 }
 .page h1 {
-    padding: 0;
+    padding: 0px;
 }
 .page p {
     font-size: 18px;
     color: darkgray;
-    margin: 6px 0 -10px 0;
-    padding: 20px 0 0 0;
+    margin: 6px 0 0 12px;
 }
 .page code {
     font-size: 16px;
-    margin-left: 12px;
+    margin: 0 0 24px 24px;
     padding: 6px;
     background-color: rgb(244, 248, 248);
+}
+.page h3 {
+    font-size: 18px;
+    padding: 0px;
+    margin: 6px 0 0 0;
 }

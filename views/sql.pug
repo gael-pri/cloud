@@ -1,0 +1,50 @@
+extends layout.pug
+
+block content
+    .content 
+        .menu
+            include includes/menu.pug
+
+        .page
+            - const capitalize = s => s && s[0].toUpperCase() + s.slice(1)
+            .block
+                h1= capitalize('les basiques du Sql')
+            .block
+                h3 Installer PostgreSQL
+                p Sur linux ubuntu
+                code apt install postgresql
+            .block
+                h3 Se connecter à la base de données
+                p Vérifier que psql est bien installé
+                code psql --version
+                p Se connecter à une base de données existante
+                code psql -d database_name -U username
+                p Accéder à la base de donnée installée par défault comme  superuser
+                code psql -d postgres -U postgres
+                p Demander une aide générale
+                code \?
+                p Demander de l'aide sur une commande
+                code \h COMMAND
+                p Et pour quitter
+                code q
+            .block
+                h3 Opérations sur les bases de données
+                p Créer une base de donnée
+                code CREATE DATABASE database_name;
+                p Lister les bases de données
+                code \l ou \l+
+                p Changer de base de donnée
+                code \c database_name
+                p Supprimer une base de donnée
+                code DROP DATABASE IF EXISTS database_name;
+            .block
+                h3 Opérations sur les tables
+                p Créer une table
+                code CREATE TABLE table_name();
+                br
+                code.
+                    CREATE TABLE authors(
+                    author_id SERIAL PRIMARY KEY, 
+                    first_name VARCHAR(100) NOT NULL, 
+                    last_name VARCHAR(100) NOT NULL
+                    );
