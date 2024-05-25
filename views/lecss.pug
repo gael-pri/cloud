@@ -1,0 +1,14 @@
+extends layout.pug
+
+block content
+    .content 
+        .menu
+            include includes/menu.pug
+
+        .page
+            - const capitalize = s => s && s[0].toUpperCase() + s.slice(1)
+            .block
+                h1= capitalize('les basiques du Css')
+            .block
+                h3 Les flexbox
+                img(width="1000" src="images/css-flexbox-poster.png")

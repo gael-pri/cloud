@@ -9,5 +9,8 @@ router.get('/git', (req, res) => {
 router.get('/sql', (req, res) => {
     res.render('sql');
     })
+router.get('/lecss', (req, res) => {
+    res.render('lecss');
+    })
 
 module.exports = router;

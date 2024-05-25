@@ -4,7 +4,6 @@ block content
     .content 
         .menu
             include includes/menu.pug
-
         .page
             - const capitalize = s => s && s[0].toUpperCase() + s.slice(1)
             .block
@@ -25,8 +24,8 @@ block content
                 code \?
                 p Demander de l'aide sur une commande
                 code \h COMMAND
-                p Et pour quitter
-                code q
+                p Pour quitter une requête en cours / quitter psql
+                code q / ctrl d
             .block
                 h3 Opérations sur les bases de données
                 p Créer une base de donnée
@@ -48,3 +47,23 @@ block content
                     first_name VARCHAR(100) NOT NULL, 
                     last_name VARCHAR(100) NOT NULL
                     );
+                p Insérer une data
+                code INSERT INTO authors (first_name, last_name)
+                br
+                code VALUES (‘Tamsyn’, ‘Muir’), (‘Ann’, ‘Leckie’), (‘Zen’, ‘Cho’);
+                p Selectionner les données d'une table
+                code SELECT * FROM authors;
+                p Lister toutes les tables
+                code \dt
+                p Obtenir plus d'infos sur une table
+                code \d table_name
+                p Rennomer une table
+                code ALTER TABLE table_name RENAME TO new_table_name;
+                p Supprimer une table
+                code DROP TABLE table_name;
+                p Ouvrir le bloc note pour écrire une longue requête
+                code \e
+            .block
+                h3 Quelques liens
+                p Free code camp
+                code https://www.freecodecamp.org/news/manage-postgresql-with-psql/
