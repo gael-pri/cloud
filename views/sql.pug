@@ -9,10 +9,51 @@ block content
             .block
                 h1= capitalize('les basiques du Sql')
             .block
+                h3 Installer MongoDB
+                p Document de référence
+                code https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
+                p Sur linux ubuntu
+                br
+                p Installer gnupg et curl
+                code sudo apt-get install gnupg curl
+                h3 Le code de base pour MongoDB
+                code curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \
+                code sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg \
+                code --dearmor
+                p Créer la listfile pour les paquets mongo
+                code echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+                p Recharger la list des paquets
+                code sudo apt-get update
+                p Installer les paquets de MongoDB
+                code sudo apt-get install -y mongodb-org
+                p Démarrer MongoDB
+                code sudo systemctl start mongod
+                p Vérifier que Mongo à bien démarré
+                code sudo systemctl status mongod
+                p Pour que Mongo se lance en meme temps que le système (reboot)
+                code sudo systemctl enable mongod
+                p Pour arrêter et redémarrer Mongo
+                code sudo systemctl stop mongod
+                code sudo systemctl restart mongod
+            .block 
+                h3 Utiliser MongoDB
+                p Lancer le shell depuis le terminal
+                code mongosh
+                p Sélectionner une base de données ou la créer le cas échéant
+                code use database
+                p Créer un utilisateur
+                code db.createUser({user: "user", pwd: "password", roles: [ "readWrite"]})
+                p Lister les collections
+                code db.getCollectionNames()
+                p Créer une collection
+                code db.createCollection()
+                p Créer un document 
+                code db.mycollectionname.insertOne({title: "", index: "1", nbreOflessons: 12});
+            .block
                 h3 Installer MariaDB
                 p Sur linux ubuntu
                 code apt install 
-                h3 Le code de base
+                h3 Le code de base pour MariaDB
                 p Voir la version installée
                 code mysql -V
                 p Se connecter à MariaDB
@@ -25,12 +66,14 @@ block content
                 code USE wild;
                 p Lister les tables
                 code SHOW TABLES;
+                p Quitter MariaDB
+                code ctr q
             .block
                 h3 Installer PostgreSQL
                 p Sur linux ubuntu
                 code apt install postgresql
             .block
-                h3 Se connecter à la base de données
+                h3 Se connecter à la base de données psql
                 p Vérifier que psql est bien installé
                 code psql --version
                 p Se connecter à une base de données existante
@@ -44,7 +87,7 @@ block content
                 p Pour quitter une requête en cours / quitter psql
                 code q / ctrl d
             .block
-                h3 Opérations sur les bases de données
+                h3 Opérations sur les bases de données psql
                 p Créer une base de donnée
                 code CREATE DATABASE database_name;
                 p Lister les bases de données
@@ -54,7 +97,7 @@ block content
                 p Supprimer une base de donnée
                 code DROP DATABASE IF EXISTS database_name;
             .block
-                h3 Opérations sur les tables
+                h3 Opérations sur les tables psql
                 p Créer une table
                 code CREATE TABLE table_name();
                 br
